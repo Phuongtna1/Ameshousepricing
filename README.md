@@ -13,17 +13,13 @@ conda install ipykernel -y
 pip install -r requirements.txt 
 ```
 
+
 ```````
 git config --global user.name "Phuongtna1"
 git config --global user.email "phuongtna1@gmail.com"
 git add requirements.txt
-```````
-
-
-`````
-
-``````
-
-```````
-
+git add .
+git status
+git commit -m "First commit all fundamental files"
+git push origin main
 ```````
