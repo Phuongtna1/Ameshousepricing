@@ -1,3 +1,176 @@
-<h1>
-    HELLO WORLD!
-</h1>
+<body style="background-image: url('https://wallpaperaccess.com/full/259715.jpg'); background-size: cover; background-repeat: no-repeat;">
+    <div style="background-color: rgba(196, 244, 229, 0.6); padding: 5px; border-radius: 20px; display: inline-block; box-shadow: 0 0 10px 10px rgba(196, 244, 229, 0.6); border: none;">
+        <h1>
+            Ames House Price Prediction
+        </h1>
+        <form action="{{url_for('predict')}}" method='post' style="display: table;">
+            
+            <!-- OverallQual -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">OverallQual</label>
+                <select name="OverallQual" required="required" style="display: table-cell; width: 100%;">
+                    <option value="10">Very Excellent</option>
+                    <option value="9">Excellent</option>
+                    <option value="8">Very Good</option>
+                    <option value="7" selected>Good</option>
+                    <option value="6">Above Average</option>
+                    <option value="5">Average</option>
+                    <option value="4">Below Average</option>
+                    <option value="3">Fair</option>
+                    <option value="2">Poor</option>
+                    <option value="1">Very Poor</option>
+                </select>
+            </p>
+
+            <!-- YearBuilt -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">YearBuilt</label>
+                <input type="text" name="YearBuilt" placeholder="2003.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- YearRemodAdd -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">YearRemodAdd</label>
+                <input type="text" name="YearRemodAdd" placeholder="2003.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- ExterQual -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">ExterQual</label>
+                <select name="ExterQual" required="required" style="display: table-cell; width: 100%;">
+                    <option value="5.0">Excellent</option>
+                    <option value="4.0" selected>Good</option>
+                    <option value="3.0">Average/Typical</option>
+                    <option value="2.0">Fair</option>
+                    <option value="1.0">Poor</option>
+                </select>
+            </p>
+
+            <!-- BsmtQual -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">BsmtQual</label>
+                <select name="BsmtQual" required="required" style="display: table-cell; width: 100%;">
+                    <option value="5.0">Ex Excellent (100+ inches)</option>
+                    <option value="4.0" selected>Gd Good (90-99 inches)</option>
+                    <option value="3.0">TA Typical (80-89 inches)</option>
+                    <option value="2.0">Fa Fair (70-79 inches)</option>
+                    <option value="1.0">Po Poor (&lt;70 inches)</option>
+                    <option value="0.0">NA No Basement</option>
+                </select>
+            </p>
+
+            <!-- TotalBsmtSF -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">TotalBsmtSF</label>
+                <input type="text" name="TotalBsmtSF" placeholder="856.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- 1stFlrSF -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">1stFlrSF</label>
+                <input type="text" name="1stFlrSF" placeholder="856.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- GrLivArea -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GrLivArea</label>
+                <input type="text" name="GrLivArea" placeholder="1710.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- FullBath -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">FullBath</label>
+                <input type="text" name="FullBath" placeholder="2.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- KitchenQual -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">KitchenQual</label>
+                <select name="KitchenQual" required="required" style="display: table-cell; width: 100%;">
+                    <option value="5.0">Ex Excellent</option>
+                    <option value="4.0" selected>Gd Good</option>
+                    <option value="3.0">TA Typical/Average</option>
+                    <option value="2.0">Fa Fair</option>
+                    <option value="1.0">Po Poor</option>
+                </select>
+            </p>
+
+            <!-- TotRmsAbvGrd -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">TotRmsAbvGrd</label>
+                <input type="text" name="TotRmsAbvGrd" placeholder="8.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- Fireplaces -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">Fireplaces</label>
+                <input type="text" name="Fireplaces" placeholder="0.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- FireplaceQu -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">FireplaceQu</label>
+                <select name="FireplaceQu" required="required" style="display: table-cell; width: 100%;">
+                    <option value="5.0">Ex Excellent</option>
+                    <option value="4.0">Gd Good</option>
+                    <option value="3.0">TA Average</option>
+                    <option value="2.0">Fa Fair</option>
+                    <option value="1.0">Po Poor</option>
+                    <option value="0.0" selected>NA No Fireplace</option>
+                </select>
+            </p>
+
+            <!-- GarageType -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GarageType</label>
+                <select name="GarageType" required="required" style="display: table-cell; width: 100%;">
+                    <option value="6.0">2Types More than one type</option>
+                    <option value="1.0" selected>Attchd Attached to home</option>
+                    <option value="4.0">Basment Basement Garage</option>
+                    <option value="3.0">BuiltIn Built-In</option>
+                    <option value="5.0">CarPort Car Port</option>
+                    <option value="2.0">Detchd Detached from home</option>
+                    <option value="0.0">NA No Garage</option>
+                </select>
+            </p>
+
+            <!-- GarageYrBlt -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GarageYrBlt</label>
+                <input type="text" name="GarageYrBlt" placeholder="2003.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- GarageFinish -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GarageFinish</label>
+                <select name="GarageFinish" required="required" style="display: table-cell; width: 100%;">
+                    <option value="3.0">Fin Finished</option>
+                    <option value="2.0" selected>RFn Rough Finished</option>
+                    <option value="1.0">Unf Unfinished</option>
+                    <option value="0.0">NA No Garage</option>
+                </select>
+            </p>
+
+            <!-- GarageCars -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GarageCars</label>
+                <input type="text" name="GarageCars" placeholder="2.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- GarageArea -->
+            <p style="display: table-row;">
+                <label style="display: table-cell; padding-right: 10px; padding-bottom: 5px;">GarageArea</label>
+                <input type="text" name="GarageArea" placeholder="548.0" required="required" style="display: table-cell;" />
+            </p>
+
+            <!-- Nút Predict -->
+            <div style="display: table-row;">
+                <div style="display: table-cell;"></div>
+                <div style="display: table-cell; padding-top: 10px;">
+                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                </div>
+            </div>
+        </form>
+    {{prediction_text}}
+    </div> 
+</body>
